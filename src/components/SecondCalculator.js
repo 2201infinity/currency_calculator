@@ -32,7 +32,6 @@ function SecondCalculator() {
 
   const handleSelectTab = (e) => {
     setCountry(e.target.value);
-    calculate();
   };
 
   const handleClick = (e) => {
