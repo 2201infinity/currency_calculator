@@ -108,27 +108,28 @@ function SecondCalculator() {
           ))}
         </select>
       </InputBox>
-
-      <Tabs>
-        {data
-          .filter((item) => item.tabTitle !== selectedCountry)
-          .map((item) => (
-            <Tab
-              key={item.id}
-              id={item.tabTitle}
-              onClick={handleClick}
-              isActive={selectedTab === item.tabTitle}
-            >
-              {item.tabTitle}
-            </Tab>
-          ))}
-      </Tabs>
-      <ResultBox>
-        <Currency>
-          {result ? `${selectedTab}:${result.toFixed(2)}` : "loading.."}
-        </Currency>
-        <Date>기준일 : {referenceDate}</Date>
-      </ResultBox>
+      <ResultWrapper>
+        <Tabs>
+          {data
+            .filter((item) => item.tabTitle !== selectedCountry)
+            .map((item) => (
+              <Tab
+                key={item.id}
+                id={item.tabTitle}
+                onClick={handleClick}
+                isActive={selectedTab === item.tabTitle}
+              >
+                {item.tabTitle}
+              </Tab>
+            ))}
+        </Tabs>
+        <ResultBox>
+          <Currency>
+            {result ? `${selectedTab}:${result.toFixed(2)}` : "loading.."}
+          </Currency>
+          <Date>기준일 : {referenceDate}</Date>
+        </ResultBox>
+      </ResultWrapper>
     </CalculatorContainer>
   );
 }
@@ -154,7 +155,7 @@ const InputBox = styled.div`
     border: none;
     border-radius: 1rem;
     outline: none;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0 4vmin;
     background: #fef9ef;
@@ -178,20 +179,24 @@ const InputBox = styled.div`
     height: 50px;
     padding: 0.6em 1.4em;
     border: none;
-    text-align: center;
     border-radius: 0.5em;
     caret-color: #ff865e;
     background-color: #ff865e;
     color: #fff;
     box-shadow: 0.1rem 0.1rem 0.3rem #ff865e;
+    background: url(https://i.ibb.co/Fx36qgn/white-down-arrow-icon-9.png) 80% / 15% no-repeat #ff865e;
   }
   }
-
   select:hover,
   select:focus {
     border: 2px solid #ff695e;
   }
 `;
+
+const ResultWrapper = styled.div`
+  box-shadow: 4px 4px 4px #fa9e7f;
+`;
+
 const ResultBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -220,7 +225,7 @@ const Tab = styled.div`
   cursor: pointer;
   padding: 10px;
   width: 60px;
-  border-right: 1px solid #fef9ef;
+  border-left: 1px solid #fef9ef;
   text-align: center;
 `;
 
