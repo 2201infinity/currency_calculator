@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { getExchangeRate } from "../utils/api";
 import styled from "styled-components";
+import { comma } from "../utils/comma";
 
 function SecondCalculator() {
   const [money, setMoney] = useState(1);
@@ -125,7 +126,9 @@ function SecondCalculator() {
         </Tabs>
         <ResultBox>
           <Currency>
-            {result ? `${selectedTab}:${result.toFixed(2)}` : "loading.."}
+            {result
+              ? `${selectedTab}:${comma(result.toFixed(2))}`
+              : "loading.."}
           </Currency>
           <Date>기준일 : {referenceDate}</Date>
         </ResultBox>
