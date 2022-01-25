@@ -80,7 +80,7 @@
 
 ### **첫번째 계산기 (김기영, 이도현)**
 
-<img src="https://i.ibb.co/q0q2yRM/2022-01-25-10-31-37.png" width="100%"/>
+<img src="https://i.ibb.co/q0q2yRM/2022-01-25-10-31-37.png" width="70%"/>
 
 1. 수취국가는 한국, 일본, 필리핀 세 군데 중 하나를 select box로 선택합니다. 각각 통화는 KRW, JPY, PHP 입니다.
 2. 수취국가를 선택하면 아래 환율이 바뀌어나타나야 합니다. 환율은 1 USD 기준으로 각각 KRW, JPY, PHP의 대응 금액입니다.
@@ -90,7 +90,7 @@
 
 ### **두번째 계산기 (임향수, 조예지)**
 
-<img src="https://i.ibb.co/gPqHynw/2022-01-25-11-40-57.png" width="100%"/>
+<img src="https://i.ibb.co/4KDfVFf/2022-01-26-1-06-15.png" width="70%"/>
 
 1. 계산기의 Input 영역에는 숫자만 입력할 수 있습니다. 1000 이상을 입력할 경우 값은 자동적으로 “1000”으로 변경됩니다.
 2. “USD” 드롭다운 클릭시 USD,CAD,KRW, HKD,JPY,CNY 중 통화를 선택할 수 있습니다.
