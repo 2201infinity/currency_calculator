@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { comma } from "../utils/comma";
 
 function SecondCalculator() {
-  const [money, setMoney] = useState(1);
+  const [money, setMoney] = useState("0");
   const [selectedTab, setSelectedTab] = useState("CAD");
   const [selectedCountry, setCountry] = useState("USD");
   const [result, setResult] = useState(0);
@@ -71,13 +71,12 @@ function SecondCalculator() {
   };
 
   const handleChange = (e) => {
-    const value = e.target.value.replace(/[^0-9]/, "");
-    const maxMoney = 1000;
-    if (value <= maxMoney && value >= 0) {
-      setMoney(value);
-    } else {
-      setMoney(maxMoney);
-    }
+    const number = +e.target.value
+      .replace(/[^0-9]/g, "")
+      .split(",")
+      .join("");
+    e.target.value = number.toLocaleString();
+    setMoney(number);
     calculate();
   };
 
@@ -99,8 +98,7 @@ function SecondCalculator() {
           onChange={handleChange}
           onKeyPress={handleEnter}
           onClick={handleInputClick}
-          type="number"
-          value={money}
+          maxLength="15"
         ></input>
         <select onChange={handleSelectTab}>
           {data.map((item) => (
@@ -159,7 +157,7 @@ const InputBox = styled.div`
     outline: none;
     font-size: 20px;
     font-weight: bold;
-    padding: 0 4vmin;
+    padding: 0 2vmin;
     background: #fef9ef;
     color: #ff865e;
     caret-color: #ff865e;
