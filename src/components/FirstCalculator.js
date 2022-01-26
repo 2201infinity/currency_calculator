@@ -140,7 +140,7 @@ const FirstCalculatorContainer = styled.div`
 `;
 
 const CalculatorInner = styled.div`
-  width: 500px;
+  width: auto;
 `;
 
 const CalculatorHeader = styled.h1`
