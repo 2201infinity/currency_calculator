@@ -1,5 +1,5 @@
 export const EXCHANGE_RATE_API_URL =
-  "http://api.currencylayer.com/live?access_key=a47d3fe24319dccb1d87ff3bb23ec31a";
+  "http://api.currencylayer.com/live?access_key=da3c17b44c87a905af98c004e5f48a59";
 
 export const FIRST_CALCULATOR_OPTIONS = [
   {
